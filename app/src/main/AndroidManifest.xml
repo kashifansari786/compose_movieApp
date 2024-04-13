@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankUi_compose"
         tools:targetApi="31"
-        android:name=".di.BaseApplication">
+        android:name="com.example.movie_compose.di.BaseApplication">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.movie_compose.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BankUi_compose">

@@ -1,5 +1,8 @@
 package com.example.movie_compose.navigation
 
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -22,7 +25,11 @@ fun MovieNavigation(navHostController: NavHostController){
         composable(MovieNavigationItem.MovieList.route){
             MovieListScreen(navHostController)
         }
-        composable(MovieNavigationItem.MovieDetails.route+"/{id}"){
+        composable(MovieNavigationItem.MovieDetails.route+"/{id}",
+            enterTransition = {//enter transition is an animation which takes input fadeIn/fadeOut like parameters to show animation
+            fadeIn(animationSpec = tween(2000))
+        }
+        ){
             val id=it.arguments?.getString("id")
             MovieDetailsScreen()
 

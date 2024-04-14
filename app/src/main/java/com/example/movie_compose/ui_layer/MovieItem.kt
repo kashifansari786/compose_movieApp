@@ -25,3 +25,14 @@ fun MovieItem(it:Movie,onClick:(String)->Unit) {
             .clickable { onClick.invoke(it.id.toString()) },
         contentScale = ContentScale.Crop)
 }
+
+//@Composable
+//fun MoviePaginationItem(it:Movie,onClick:(String)->Unit) {
+//    AsyncImage(model = "https://image.tmdb.org/t/p/w500/${it.poster_path}",
+//        contentDescription = null,
+//        modifier = Modifier.fillMaxWidth()
+//            .height(300.dp)
+//            .padding(vertical = 2.dp)
+//            .clickable { onClick.invoke(it.id.toString()) },
+//        contentScale = ContentScale.Crop)
+//}

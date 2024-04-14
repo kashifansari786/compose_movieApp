@@ -11,10 +11,16 @@ import retrofit2.http.Query
  */
 interface ApiService {
 
-    //https://api.themoviedb.org/3/movie/popular?api_key=8c0067d631aa70fb15eaf0b9f56f1e6a
+    //https://api.themoviedb.org/3/movie/popular?api_key=###
     @GET("3/movie/popular")
     suspend fun getMovieList(
         @Query("api_key") apiKey: String
+    ):MovieListResponse
+
+    @GET("3/movie/popular")
+    suspend fun getMovieAllList(
+        @Query("api_key") apiKey: String,
+        @Query("page") page:Int  //for pagination
     ):MovieListResponse
 
     @GET("3/movie/{id}")
